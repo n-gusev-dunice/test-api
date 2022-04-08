@@ -6,7 +6,7 @@ import {
 
 @Injectable()
 export class ClientService {
-  private users = [
+  private readonly users = [
     {
       id: '12',
       name: 'vasya',
@@ -18,6 +18,7 @@ export class ClientService {
       password: '331210',
     },
   ];
+
   getById(userId: string) {
     const user = this.users.find(({ id }) => id === userId);
     if (!user) throw new NotFoundException('user not found');
